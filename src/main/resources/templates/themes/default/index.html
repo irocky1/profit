@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <title>biezhi 全自动要饭系统</title>
+    <title>全自动要饭系统</title>
     <meta charset="utf-8"/>
     <meta content="${_csrf_token}" name="csrf_token"/>
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body background="https://ww2.sinaimg.cn/large/a15b4afegy1fpp139ax3wj200o00g073.jpg">
+<body background="/static/img/rocky.png">
 <div class="container" style="padding-top:20px;">
     <div class="col-xs-12 col-sm-10 col-lg-8 center-block" style="float: none;">
         <div class="panel panel-primary">
@@ -239,7 +239,7 @@
             [0.88, '恭喜发财'],
             [1.1, '一生一世'],
             [2.33, '笑看人生'],
-            [3.14, 'biezhi 真棒 (๑•̀ㅂ•́)و✧'],
+            [3.14, '真棒 (๑•̀ㅂ•́)و✧'],
             [5.20, '爱你哟'],
             [6.66, '真的很6']
         ];
@@ -249,6 +249,15 @@
     }
 
     randomMoney();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?61788ca474c7f30ff8abefe90d0f09de";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 </body>
 </html>
