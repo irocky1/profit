@@ -9,6 +9,7 @@ import io.github.biezhi.profit.bootstrap.Constant;
 import io.github.biezhi.profit.entities.request.CreateOrderRequest;
 import io.github.biezhi.profit.entities.response.PayOrderResponse;
 import io.github.biezhi.profit.entities.response.QRCodeResponse;
+import io.github.biezhi.profit.enums.Platform;
 import io.github.biezhi.profit.thirdparty.youzan.AccessToken;
 import io.github.biezhi.profit.thirdparty.youzan.Response;
 import io.github.biezhi.request.Request;
@@ -103,4 +104,8 @@ public class YouzanPayApi implements PayApi {
         return body.contains("TRADE_RECEIVED");
     }
 
+    @Override
+    public Platform getPayPlatform() {
+        return Platform.YOUZAN;
+    }
 }

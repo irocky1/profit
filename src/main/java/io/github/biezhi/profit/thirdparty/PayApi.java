@@ -43,4 +43,6 @@ public interface PayApi {
         }
         return null;
     }
+
+    Platform getPayPlatform();
 }

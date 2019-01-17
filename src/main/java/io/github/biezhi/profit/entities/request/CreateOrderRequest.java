@@ -13,7 +13,8 @@ public class CreateOrderRequest {
      * 金额，单位/元
      */
     private Integer price;
-    private String  qrName = "打赏一下";
-    private String  qrType = "QR_TYPE_NOLIMIT";
+    private String qrName = "打赏一下";
+    private String qrType = "QR_TYPE_NOLIMIT";
 
+    public String orderNo;
 }

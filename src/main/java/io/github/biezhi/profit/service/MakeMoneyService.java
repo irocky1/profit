@@ -84,7 +84,7 @@ public class MakeMoneyService {
 
         String orderNo = Utils.genOrderID();
         order.setOrderStatus(0);
-        order.setPlatform(Platform.YOUZAN.toString().toLowerCase());
+        order.setPlatform(Bootstrap.payApi.getPayPlatform().toString().toLowerCase());
         order.setOrderNo(orderNo);
         order.setCreated(new Date());
 
@@ -105,16 +105,15 @@ public class MakeMoneyService {
     }
 
     private PayOrderResponse getPayOrderResponse(Order order) {
-        if (Platform.YOUZAN.toString().equalsIgnoreCase(order.getPlatform())) {
+        if (Platform.YOUZAN.toString().equalsIgnoreCase(order.getPlatform())||Platform.PAYJS.toString().equalsIgnoreCase(order.getPlatform())) {
             CreateOrderRequest createOrderRequest = new CreateOrderRequest();
             createOrderRequest.setPrice(order.getMoney().intValue());
             createOrderRequest.setQrName(order.getPayComment());
+            createOrderRequest.setOrderNo(order.getOrderNo());
 
             return Bootstrap.payApi.createQrCode(createOrderRequest);
         }
-        if (Platform.PAYJS.toString().equalsIgnoreCase(order.getPlatform())) {
-            // TODO
-        }
+
         throw new ValidatorException("暂不支持交易");
     }
 
@@ -173,7 +172,8 @@ public class MakeMoneyService {
     }
 
     public boolean checkOrderPaySuccess(String tradeNo) {
-        if (Platform.YOUZAN.toString().equalsIgnoreCase(Bootstrap.getGlobalConfig().get(Constant.SAFE_PLATFORM))) {
+        String platform = Bootstrap.getGlobalConfig().get(Constant.SAFE_PLATFORM);
+        if (Platform.YOUZAN.toString().equalsIgnoreCase(platform) || Platform.PAYJS.toString().equalsIgnoreCase(platform)) {
             return Bootstrap.payApi.orderPaySuccess(tradeNo);
         }
         return false;
