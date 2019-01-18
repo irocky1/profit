@@ -3,6 +3,8 @@ package io.github.biezhi.profit.thirdparty;
 import io.github.biezhi.profit.entities.request.CreateOrderRequest;
 import io.github.biezhi.profit.entities.response.PayOrderResponse;
 import io.github.biezhi.profit.enums.Platform;
+import io.github.biezhi.profit.thirdparty.payjs.PayJSApi;
+import io.github.biezhi.profit.thirdparty.youzan.YouzanPayApi;
 
 /**
  * 支付平台接口抽象

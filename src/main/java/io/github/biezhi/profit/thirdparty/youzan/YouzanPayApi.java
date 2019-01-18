@@ -1,4 +1,4 @@
-package io.github.biezhi.profit.thirdparty;
+package io.github.biezhi.profit.thirdparty.youzan;
 
 import com.blade.exception.ValidatorException;
 import com.blade.kit.StringKit;
@@ -10,6 +10,7 @@ import io.github.biezhi.profit.entities.request.CreateOrderRequest;
 import io.github.biezhi.profit.entities.response.PayOrderResponse;
 import io.github.biezhi.profit.entities.response.QRCodeResponse;
 import io.github.biezhi.profit.enums.Platform;
+import io.github.biezhi.profit.thirdparty.PayApi;
 import io.github.biezhi.profit.thirdparty.youzan.AccessToken;
 import io.github.biezhi.profit.thirdparty.youzan.Response;
 import io.github.biezhi.request.Request;
